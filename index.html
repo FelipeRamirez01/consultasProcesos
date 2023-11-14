@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>CSJG - Consulta de Procesos</title>
+<link rel="stylesheet" href="estilos_totales.css">
+</head>
+<script language="JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+// -->
+// <-- funcion que oculta las tablas, se relaciona con el idd,none oculta y doblecomillas visualiza -->
+  function ocultar()
+  {
+          document.all.nombre.style.display = "none";
+          document.all.nurp.style.display = "none";
+		  document.all.identif.style.display = "none";
+ 		  document.all.noInterno.style.display = "none";
+   }
+  // <!-- funcion que visualiza un mensaje determinado segun el dato entrante -->
+  function ver_msg()
+  {
+   //  <!-- cbadju es el combo en este ejemplo -->
+         if(document.all.cbadju.value==1)
+         {
+          document.all.nurp.style.display = "";
+          document.all.nombre.style.display = "none";
+		  document.all.identif.style.display = "none";
+		  document.all.noInterno.style.display = "none";
+         }
+         if(document.all.cbadju.value==2)
+         {
+          document.all.nurp.style.display = "none";
+          document.all.nombre.style.display = "";
+		  document.all.identif.style.display = "none";
+		  document.all.noInterno.style.display = "none";
+         }
+		 if(document.all.cbadju.value==3)
+         {
+          document.all.nurp.style.display = "none";
+          document.all.nombre.style.display = "none";
+		  document.all.identif.style.display = "";
+ 		  document.all.noInterno.style.display = "none";
+         }
+ 		 if(document.all.cbadju.value==4)
+         {
+          document.all.nurp.style.display = "none";
+          document.all.nombre.style.display = "none";
+		  document.all.identif.style.display = "none";
+		  document.all.noInterno.style.display = "";
+         }
+
+}
+</script>
+
+<body onLoad="ver_msg();" > 
+<table width="100%" border="0" align="center">
+  <tr> 
+    <td width="20%" height="119"><a href="//www.ramajudicial.gov.co"><img src="logo_escudo_girando.gif" width="117" height="117" lowsrc="logo_escudo_girando.gif" align="middle" border="0"></a></td>
+    <td width="60%"> 
+      <p align="center"><font size="4"><b><font color="#0000A0" size="2" face="Times New Roman, Times, serif">REPUBLICA 
+        DE COLOMBIA</font></b></font></p>
+      <p align="center"><font size="2" color="#0000A0"><b><font face="Times New Roman, Times, serif">RAMA 
+        JUDICIAL DEL PODER PUBLICO</font></b></font></p>
+      <p align="center"><font size="2" color="#0000A0"><b><font face="Times New Roman, Times, serif">CONSEJO 
+        SUPERIOR DE LA JUDICATURA</font></b></font></p>
+      <p align="center"><font size="2" color="#0000A0"><b><font face="Times New Roman, Times, serif">CENTRO DE SERVICIOS JUDICIALES PARA LOS JUZGADOS PENALES DE GIRARDOT</font></b></font></p>
+    </td>
+    <td width="20%"> 
+      <div align="right"><a href="//www.ramajudicial.gov.co"><img src="logo_csj.jpg" width="103" height="128" align="center" border="0"></a></div>
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" align="center">
+  <tr> 
+    <td>&nbsp;</td>
+    <td> 
+      <div align="center"><b><font color="#000033" face="Arial, Helvetica, sans-serif">CONSULTA 
+        DE EXPEDIENTES</font></b></div>
+    </td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<form method=post action=lista.html name=opcion> 
+  <p align="center"><font face="Verdana, Arial, Helvetica, sans-serif"><b><i>Seleccione 
+  la opción de búsqueda</i></b></font> </p>
+<p align="center"> 
+ <select name=cbadju onChange="ver_msg();">
+      <option value="2">Apellidos del sujeto</option>
+      <option value="1">Número unico de radicación del expediente</option>
+      <option value="3">Documento de identificación del sujeto</option>
+      <option value="4">Número Interno</option>
+    </select>
+</p>
+  <p align="center"> 
+    <input type="text" name=norad size="40">
+    <input type="submit" name=Buscar value=Buscar>
+    
+  </p>
+<table  name=nurp id=nurp width="97%" border="0" bgcolor="#FFFFFF" align="center" height="63" >
+  <tr> 
+    <td height="70"> 
+      <div align="center"><font face="Arial, Helvetica, sans-serif"><b><i><font color="#000099" size="2">Por 
+        favor digite el NUmero único de Radicación del expediente 
+        a consultar, en lo posible digite los 23 dígitos p.e <font color="#FF0000">11001310401520010001201</font> 
+       ó en su defecto el año (4 dígitos) y el número 
+        de radicación (5 dígitos) p.e. <font color="#FF0000">200200345</font>, 
+        no utilice caracteres especiales, ni guiones, ni letras ni espacios</font></i></b></font></div>
+    </td>
+  </tr>
+</table>
+<table id=nombre width="97%" border="0" bgcolor="#FFFFFF" name=nombre align="center">
+  <tr> 
+    <td> 
+      <div align="center"><font face="Arial, Helvetica, sans-serif"><b><i><font color="#000099" size="2">Por 
+          favor digite los APELLIDOS del sujeto, en lo posible los dos apellidos 
+          p.e. <font color="#FF0000">MARTINEZ PEREZ</font></font></i></b></font></div>
+    </td>
+  </tr>
+</table>
+
+<table id=identif width="97%" border="0" bgcolor="#FFFFFF" name=identif align="center">
+  <tr> 
+    <td> 
+      <div align="center"><font face="Arial, Helvetica, sans-serif"><b><i><font color="#000099" size="2">Por 
+        favor digite el NÚMERO DE IDENTIFICACIÓN del procesado, 
+        no utilice caracteres especiales, ni guiones, ni letras ni espacios p.e. 
+        <font color="#FF0000">79231561</font></font></i></b></font></div>
+    </td>
+  </tr>
+  </table>
+ <table id=noInterno width="97%" border="0" bgcolor="#FFFFFF" name=identif align="center">
+    <tr> 
+    <td> 
+      <div align="center"><font face="Arial, Helvetica, sans-serif"><b><i><font color="#000099" size="2">Por 
+        favor digite el NÚMERO INTERNO del expediente en los Juzgados de Ejecución de Penas, 
+        no utilice letras, caracteres especiales, ni guiones, ni espacios p.e. 
+        <font color="#FF0000">3020</font></font></i></b></font></div>
+    </td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
